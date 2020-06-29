@@ -1,0 +1,176 @@
+/*declare global variables for mostly used colors*/
+:root{
+  --back-color:hsl(40, 10%, 7%);
+  --font-color:rgba(237, 179, 120,1);
+}
+
+body{
+  text-align: center;
+  background-color: var(--back-color);
+  font-family:Quicksand;
+}
+
+header{
+  margin:20px;
+}
+
+/*since title and navigation bar sit side by side, we decalre th elements inside header as an inline-block*/
+header h1{
+  display:inline;
+  font-size:1.6em;
+  padding-right: 10px;
+  border-right:solid;
+  color:var(--font-color);
+}
+
+nav{
+  display: inline;
+}
+
+nav>a{
+  padding: 10px;
+  margin: 10px;
+  color:var(--font-color);
+  text-decoration: none;
+}
+
+nav>a:hover{
+  background-color:rgba(237, 179, 120,0.7);
+  color:black;
+}
+
+/*colourise the link which is embedded in a <p> element in the homepage content*/
+div a{
+  color:white;
+  text-decoration: none;
+}
+
+div a:hover{
+  color:rgba(250, 200, 170,1);
+}
+
+
+.section1{
+  margin-top:10px;
+  background-color:hsl(40, 10%, 8%);
+}
+
+/*elements in section version1 declared as inline block becauseimages and text sit side by side*/
+.section1 img{
+  display:inline-block;
+  vertical-align: middle;
+  width:42%;
+  margin:5px;
+  border-radius: 10px;
+}
+
+.content{
+display: inline-block;
+width:40%;
+padding :15px;
+margin:5px;
+background-color: hsl(40, 10%, 5%);
+color:var(--font-color);
+border-radius: 10px;
+}
+
+/*elements in section version 2 also sits side by side that is why declared as inline block*/
+.section2{
+  display: inline-block;
+  position:relative;
+  width:32.5%;
+  margin:3px;
+  height:350px;
+}
+
+.section2 img{
+  width:100%;
+  height:100%;
+}
+
+.content2 h3{
+  font-size: 2em;
+}
+
+.content2{
+  position: absolute;
+  text-align: center;
+  padding:10px;
+  height:100%;
+  background-color:rgba(0,0,0,0);
+  color:rgba(0,0,0,0);
+}
+
+
+.content2:hover{
+  animation-name:content2-transition;
+  animation-duration:0.5s;
+  animation-fill-mode: forwards;
+}
+
+/*animation whenever cursor hovers above content in section version2*/
+@keyframes content2-transition {
+  100%{
+    background-color:rgba(0,0,0,0.8);
+    color:rgba(237, 179, 120,1);
+  }
+}
+
+footer{
+  padding:20px;
+  background-color:rgba(0,0,0,0.6);
+  color:var(--font-color);
+}
+
+footer a{
+  color:var(--font-color);
+  text-decoration: none;
+  margin:10px;
+}
+
+footer a:hover{
+  text-decoration: underline;
+}
+
+/*media queries for screen that is less than 800px*/
+@media (max-width:800px){
+  header{
+    background-color:rgba(0,0,0,0.6);
+    margin:20px;
+  }
+
+  header h1{
+    display:block;
+    border-right:none;
+    border-bottom: solid;
+  }
+
+  nav{
+    display: block;
+  }
+
+  nav a{
+    display:block;
+  }
+
+  .section1 img{
+    clear:both;
+    position:static;
+    width:100%;
+  }
+
+  .content{
+    clear:both;
+    position:static;
+    width:100%;
+  }
+
+.section2{
+    display:block;
+    position:relative;
+    width:100%;
+    height:350px;
+  }
+
+
+}
